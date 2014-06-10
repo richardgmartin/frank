@@ -7,12 +7,7 @@ get '/' do
 	@crm_app_name = "the rgm crm"
 	erb :index
 end
-
-# get ':name' do
-# 	puts params
-# 	name = params[:name]
-# 	"Hi I'm #{name}"
-# end	
+	
 
 # create a new route for contacts
 
@@ -38,18 +33,20 @@ get '/contacts' do
 	erb :contacts
 end	
 
+# add a new contact
+get '/contacts/new' do
+	erb :new
+end
 
-# get '/contacts/new' do
-# 	# bunch of contact
-# end
+# modify an existing contact
+get '/contacts/:id/edit' do
+	erb :edit
+end
 
-# get '/contacts/:id/edit' do
-# 	# bunch of contact
-# end
-
-# get '/contacts/:id' do
-# 	# bunch of contact
-# end
+# view a contact
+get '/contacts/:id' do
+	erb :display
+end
 
 
 
