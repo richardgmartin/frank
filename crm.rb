@@ -12,14 +12,14 @@ end
 
 # add contacts
 
-# get "/contacts" do
-#   @contacts = []
-#   @contacts << Contact.new("Julie", "Hache", "julie@bitmakerlabs.com", "Instructor")
-#   @contacts << Contact.new("Will", "Richman", "will@bitmakerlabs.com", "Co-Founder")
-#   @contacts << Contact.new("Chris", "Johnston", "chris@bitmakerlabs.com", "Instructor")
+get "/contacts" do
+  @contacts = []
+  @contacts << Contact.new("Julie", "Hache", "julie@bitmakerlabs.com", "Instructor")
+  @contacts << Contact.new("Will", "Richman", "will@bitmakerlabs.com", "Co-Founder")
+  @contacts << Contact.new("Chris", "Johnston", "chris@bitmakerlabs.com", "Instructor")
 
-#   erb :contacts
-# end
+  erb :contacts
+end
 
 # post "/contacts" do
 # 	contact = Contact.new(params[:first_name])
@@ -28,9 +28,9 @@ end
 # end
 
 # view all contacts
-get '/contacts' do
-	erb :contacts
-end	
+# get '/contacts' do
+# 	erb :contacts
+# end	
 
 # add a new contact
 get '/contacts/new' do
