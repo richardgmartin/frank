@@ -1,6 +1,5 @@
+require_relative 'contact'
 require 'sinatra'
-#require_relative 'contact'
-
 
 get '/' do 
 	puts params
