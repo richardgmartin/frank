@@ -12,15 +12,7 @@ get '/' do
 end
 	
 
-# create a new route for contacts
-
-# add contacts
-
-# post "/contacts" do
-# 	contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
-# 	@@rolodex.add_contact(contact)
-# 	redirect("/contacts")
-# end
+# create new routes for contacts
 
 #  view all contacts
 get '/contacts' do
@@ -42,6 +34,11 @@ get '/contacts/:id' do
 	erb :display
 end
 
-
+post "/contacts" do
+	# puts params
+	new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
+	@@rolodex.add_contact(new_contact)
+	redirect("/contacts")
+end
 
 
