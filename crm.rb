@@ -7,11 +7,10 @@ require 'sinatra'
 # routes
 get '/' do 
 	puts params
-	@crm_app_name = "the rgm crm"
+	@crm_app_name = "rgm crm"
 	erb :index
 end
 	
-
 # create new routes for contacts
 
 #  view all contacts
