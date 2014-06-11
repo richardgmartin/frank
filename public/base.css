@@ -291,6 +291,13 @@ nav > ul > li > a {
 	text-decoration: none;
 }
 
+footer {
+	text-align: right;
+}
+
+header a {
+	text-decoration: none;
+}
 
 
 

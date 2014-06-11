@@ -35,26 +35,23 @@
   <div class="container">
 		<header class="sixteen columns">
 		  <div class="div-left">
-		    <h1>rgm crm</h1>
-		  </div>  	
+		    <h1><a href="/">rgm crm</a></h1>
+		  </div>  
+
 		  <div class="div-right">	
-			<nav>
-			  <ul>
-    			<li><a href="/">Home</a></li>
-    			<li><a href="/contacts">View All</a></li>
-    			<li><a href="/contacts/new">Add</a></li>
-    			<li><a href="/contacts/:id">View</a></li>
-    			<li><a href="/contacts/:id/edit">Modify</a></li>
-  			  </ul>
-			</nav>	
+			<%= erb :nav %>	
 		  </div>	
-	
   		</header>
+
   	<%= yield %>	
   
+		
+		
+  	<div class="sixteen columns">
 		<footer>
 			<p>copyright 2014 rgm</p>
-		</footer>	
+		</footer>
+	</div>		
   </div>			
 
 <!-- End Document

@@ -39,5 +39,3 @@ post "/contacts" do
 	@@rolodex.add_contact(new_contact)
 	redirect("/contacts")
 end
-
-
