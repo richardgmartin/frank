@@ -6,6 +6,8 @@ require 'sinatra'
 
 # temporary fake data to test 'find contact' with id = 1000
 @@rolodex.add_contact(Contact.new("Gene", "Simmons", "gene@kiss.com", "Rockstar"))
+@@rolodex.add_contact(Contact.new("Brad", "Pitt", "brad@pitt.com", "Moviestar"))
+@@rolodex.add_contact(Contact.new("Usain", "Bolt", "usain@bolt.com", "Trackstar"))
 
 
 # routes
@@ -34,16 +36,17 @@ end
 
 # test view a contact
 
-contact = @@rolodex.find(1000)
+# contact = @@rolodex.find(1000)
 
-get "/contacts/1000" do
-	@contact = @@rolodex.find(1000)
-	erb :show_contact
-end	
+# get "/contacts/1000" do
+# 	@contact = @@rolodex.find(1000)
+# 	erb :show_contact
+# end	
 
 # view a contact
 get '/contacts/:id' do
-	erb :display
+	@contact = @@rolodex.find(params[:id].to_i)
+	erb :show_contact
 end
 
 post "/contacts" do
