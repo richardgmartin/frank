@@ -1,7 +1,21 @@
 <h4>all contacts</h4>
 
-<ul>
+<table>
+<tr>
+	<th scope="col">First Name</th>
+	<th scope="col">Last Name</th>
+	<th scope="col">Email</th>
+	<th scope="col">Note</th>
+	<th scope="col">Action</th>	
+</tr>	
 	<% @@rolodex.contacts.each do |contact| %>
-       <li><%= contact.first_name %> <%= contact.last_name %> <%= contact.email %> <%= contact.note %></li>
+       <tr>
+       	<td><%= contact.first_name %></td> 
+       	<td><%= contact.last_name %></td>
+       	<td><%= contact.email %></td>
+       	<td><%= contact.note %></td>
+       	<td><a href="/contacts/<%= contact.id %>/edit">Modify</a></td> 
+       </tr>		
     <% end %>
-</ul>
+
+</table>

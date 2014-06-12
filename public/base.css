@@ -44,8 +44,8 @@
 		content: '';
 		content: none; }
 	table {
-		border-collapse: collapse;
-		border-spacing: 0; }
+		border-collapse: separate;
+		border-spacing: 1rem; }
 
 
 /* #Basic Styles
@@ -297,6 +297,10 @@ footer {
 
 header a {
 	text-decoration: none;
+}
+
+.field {
+	margin-bottom: 1rem;
 }
 
 

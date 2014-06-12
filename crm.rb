@@ -26,12 +26,17 @@ end
 
 # add a new contact
 get '/contacts/new' do
-	erb :new
+	erb :new_contact
 end
 
 # modify an existing contact
 get '/contacts/:id/edit' do
-	erb :edit
+	@contact = @@rolodex.find(params[:id].to_i)
+	if @contact
+		erb :edit_contact
+	else
+		raise Sinatra::NotFound
+	end		
 end
 
 # test view a contact
