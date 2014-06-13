@@ -5,9 +5,9 @@ require 'sinatra'
 @@rolodex = Rolodex.new
 
 # temporary fake data to test 'find contact' with id = 1000
-@@rolodex.add_contact(Contact.new("Gene", "Simmons", "gene@kiss.com", "Rockstar"))
-@@rolodex.add_contact(Contact.new("Brad", "Pitt", "brad@pitt.com", "Moviestar"))
-@@rolodex.add_contact(Contact.new("Usain", "Bolt", "usain@bolt.com", "Trackstar"))
+# @@rolodex.add_contact(Contact.new("Gene", "Simmons", "gene@kiss.com", "Rockstar"))
+# @@rolodex.add_contact(Contact.new("Brad", "Pitt", "brad@pitt.com", "Moviestar"))
+# @@rolodex.add_contact(Contact.new("Usain", "Bolt", "usain@bolt.com", "Trackstar"))
 
 
 # routes
