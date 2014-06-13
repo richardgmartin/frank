@@ -8,7 +8,7 @@
 	<th scope="col">Note</th>
 	<th scope="col">Action</th>	
 </tr>	
-	<% @@rolodex.contacts.each do |contact| %>
+	<% @contacts.each do |contact| %>
        <tr>
        	<td><%= contact.first_name %></td> 
        	<td><%= contact.last_name %></td>

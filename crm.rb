@@ -39,27 +39,28 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
-# routes
+# ROUTE DEFINITIONS
+
+# home page route
 get '/' do 
 	puts params
 	@crm_app_name = "rgm crm"
 	erb :index
 end
 	
-# create new routes for contacts
 
-#  view all contacts
+#  view all contacts route
 get '/contacts' do
+	@contacts = Contact.all
 	erb :contacts
 end	
 
-# add a new contact
+# add a new contact route
 get '/contacts/new' do
 	erb :new_contact
 end
 
-
-# modify an existing contact
+# modify an existing contact route
 get '/contacts/:id/edit' do
 	@contact = @@rolodex.find(params[:id].to_i)
 	if @contact
@@ -67,20 +68,11 @@ get '/contacts/:id/edit' do
 	else
 		raise Sinatra::NotFound
 	end		
-end
+end	
 
-# test view a contact
-
-# contact = @@rolodex.find(1000)
-
-# get "/contacts/1000" do
-# 	@contact = @@rolodex.find(1000)
-# 	erb :show_contact
-# end	
-
-# view a contact
+# view a contact route
 get '/contacts/:id' do
-	@contact = @@rolodex.find(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
 	if @contact
 		erb :show_contact
 	else
@@ -88,13 +80,18 @@ get '/contacts/:id' do
 	end			
 end
 
+# create a contact route
 post "/contacts" do
-	# puts params
-	new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
-	@@rolodex.add_contact(new_contact)
-	redirect("/contacts")
+	new_contact = Contact.create(
+		:first_name => params[:first_name], 
+		:last_name => params[:last_name], 
+		:email => params[:email], 
+		:note => params[:note]
+	)
+	redirect to("/contacts")
 end
 
+# 
 put "/contacts/:id" do
 	@contact = @@rolodex.find(params[:id].to_i)
 	if @contact
@@ -109,6 +106,7 @@ put "/contacts/:id" do
 	end
 end	
 
+# delete a contact route
 delete "/contacts/:id" do
 	puts "<<<<<<<<"
 	@contact = @@rolodex.find(params[:id].to_i)
